@@ -12,28 +12,28 @@ public class PersonController {
     @Autowired
     private PersonRepository repository;
 
-    @PostMapping
+    @PostMapping("/create")
     public Person create(@RequestBody Person person) {
         return repository.save(person);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public Optional<Person> findById(@PathVariable String id) {
         return repository.findById(id);
     }
 
-    @GetMapping( "/{id}")
-    public Iterable<Person> findAll(@PathVariable String id) {
+    @GetMapping( "/get/findAll")
+    public Iterable<Person> findAll() {
         return repository.findAll();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public Person update(@PathVariable String id, @RequestBody Person person) {
         person.setId(id);
         return repository.save(person);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable String id) {
         repository.deleteById(id);
     }
