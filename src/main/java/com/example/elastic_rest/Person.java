@@ -4,10 +4,13 @@ import lombok.Setter;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.annotation.Id;
 
+@Setter
+@Getter
 @Document(indexName = "sample_index")
 public class Person{
 
-    @Id @Getter @Setter private String id;
-    @Getter @Setter String name;
-    @Getter @Setter int age;
+    @Id
+    private String id;
+    String name;
+    int age;
 }

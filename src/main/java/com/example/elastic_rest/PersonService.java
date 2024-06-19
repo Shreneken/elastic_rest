@@ -1,42 +1,14 @@
 package com.example.elastic_rest;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
+public interface PersonService {
+    Person create(Person person);
 
-@Service
-public class PersonService {
+    Person update(String id, Person person) throws PersonNotFoundException;
 
-    private final PersonRepository repository;
+    void delete(String id) throws PersonNotFoundException;
 
-    PersonService (PersonRepository repository) {
-        this.repository = repository;
-    }
+    Person findById(String id) throws PersonNotFoundException;
 
-    public Person create(@RequestBody Person person){
-        return repository.save(person);
-    }
-
-    public Person findById(@PathVariable String id) throws PersonNotFoundException {
-        return repository.findById(id).orElseThrow(() -> new PersonNotFoundException("Person not Found"));
-    }
-
-    public Iterable<Person> findAll() {
-        return repository.findAll();
-    }
-
-    public Person update(@PathVariable String id, @RequestBody Person person) throws PersonNotFoundException {
-        if (!repository.existsById(id)) {
-            throw new PersonNotFoundException("Person not Found");
-        }
-        person.setId(id);
-        return repository.save(person);
-    }
-
-    public void delete(@PathVariable String id) throws PersonNotFoundException {
-        if (!repository.existsById(id)) {
-            throw new PersonNotFoundException("Person not Found");
-        }
-        repository.deleteById(id);
-    }
+    Iterable<Person> findAll();
 }

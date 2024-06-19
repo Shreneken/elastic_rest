@@ -10,7 +10,7 @@ public class PersonController {
     private final PersonService service;
 
     PersonController(PersonService service) {
-        this.service= service;
+        this.service = service;
     }
 
     @PostMapping("/create")
@@ -23,7 +23,7 @@ public class PersonController {
         return service.findById(id);
     }
 
-    @GetMapping( "/get/findAll")
+    @GetMapping("/get/findAll")
     public Iterable<Person> findAll() {
         return service.findAll();
     }
