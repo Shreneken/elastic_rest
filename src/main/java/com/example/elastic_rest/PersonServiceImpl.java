@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 
-@Component
 public class PersonServiceImpl implements PersonService {
 
     private final PersonRepository repository;
