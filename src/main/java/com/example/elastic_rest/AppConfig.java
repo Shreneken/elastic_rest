@@ -12,7 +12,7 @@ public class AppConfig {
     }
 
     @Bean
-    public PersonController personController(PersonService personService, PersonRepository repository) {
+    public PersonController personController(PersonRepository repository) {
         return new PersonController(personService(repository));
     }
 }
