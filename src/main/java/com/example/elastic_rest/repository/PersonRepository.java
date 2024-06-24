@@ -1,14 +1,11 @@
 package com.example.elastic_rest.repository;
 
 import com.example.elastic_rest.model.Person;
-import org.springframework.data.elasticsearch.client.elc.NativeQueryBuilder;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 import javax.annotation.Nullable;
-import javax.management.Query;
 import java.util.List;
 
-import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 
 public interface PersonRepository extends ElasticsearchRepository<Person, String> {
 
