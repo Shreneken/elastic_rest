@@ -1,5 +1,0 @@
-POST localhost:8080/api/persons/create
-Content-Type: application/json
-
-{"id": "010", "name": "iWillTry2", "age": 19}
-###

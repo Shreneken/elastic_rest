@@ -1,9 +1,12 @@
-package com.example.elastic_rest;
+package com.example.elastic_rest.service;
 
-import org.springframework.stereotype.Component;
+import com.example.elastic_rest.exception.PersonNotFoundException;
+import com.example.elastic_rest.repository.PersonRepository;
+import com.example.elastic_rest.model.Person;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-
+@Service
 public class PersonServiceImpl implements PersonService {
 
     private final PersonRepository repository;

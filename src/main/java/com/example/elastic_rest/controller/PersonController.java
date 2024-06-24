@@ -1,5 +1,8 @@
-package com.example.elastic_rest;
+package com.example.elastic_rest.controller;
 
+import com.example.elastic_rest.exception.PersonNotFoundException;
+import com.example.elastic_rest.model.Person;
+import com.example.elastic_rest.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 

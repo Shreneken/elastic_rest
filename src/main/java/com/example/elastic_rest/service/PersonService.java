@@ -1,5 +1,8 @@
-package com.example.elastic_rest;
+package com.example.elastic_rest.service;
 
+
+import com.example.elastic_rest.exception.PersonNotFoundException;
+import com.example.elastic_rest.model.Person;
 
 public interface PersonService {
     Person create(Person person);

@@ -1,4 +1,4 @@
-package com.example.elastic_rest;
+package com.example.elastic_rest.model;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -12,5 +12,5 @@ public class Person{
     @Id
     private String id;
     String name;
-    int age;
+    Integer age;
 }
